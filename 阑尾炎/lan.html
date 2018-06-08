@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="./js/jquery-3.2.0.min.js"></script>
+	<title>Document</title>
+	<style>
+		html,body {
+            font-size: 62.5%;
+            background-color: #eee;
+        }
+        html,body,p,span,a,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+        	text-decoration: none;
+        }
+        ul{
+        	list-style: none;
+        }
+        .clearfix::after{
+			clear: both;
+			height: 0;
+			content: "";
+			display: block;
+        }
+		.top{
+
+
+			margin-top:1.5rem;
+			background: #fff;
+			
+		}
+		.middle, .tip, .bottom, .footer{
+			margin-top:1rem;
+			background: #fff;
+		}
+		.top-title, .middle-title, .tip-title, .bottom-title, .footer-title{
+			font-family: PingFangSC-Medium;
+			font-size: 1.6rem;
+			color: #666666;
+			line-height: 1.6rem;
+			padding: 1.5rem 0 0 1.5rem;
+		}
+		.top p{
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #999999;
+			
+			line-height: 2rem;
+			padding: 1.8rem 1.5rem 1.3rem 1.5rem;
+		}
+		.top-bottom{
+			padding-bottom: 1.5rem;
+			text-align: center;
+		}
+		.top-bottom a{
+			font-family: PingFangSC-Light;
+			font-size: 1.4rem;
+			color: #666666;
+			line-height: 1.4rem;
+			display: inline-block;
+			margin: 0 1.7rem;
+		}
+		.middle-title a, .tip-title a, .footer-title a{
+			display: inline-block;
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #999999;
+			line-height: 1.3rem;
+			float: right;
+			padding-right: 1.5rem;
+		}
+		.middle-title img, .tip-title img, .footer-title img{
+			width: 0.7rem;
+			height: 1.2rem;
+			padding-left: 0.5rem;
+		}
+		.middle-content{
+			border-bottom: 1px solid #F4F4F4;
+		}
+		.middle-content img{
+			height: 1.6rem;
+			width: 1.6rem;
+			padding: 2.2rem 0 0 1.5rem;
+			float: left;
+		}
+		.middle-content-s img{
+			height: 1.6rem;
+			width: 1.6rem;
+			padding: 2rem 0 0 1.5rem;
+			float: left;
+		}
+		.middle-content p{
+			
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #323232;
+			letter-spacing: -0.03rem;
+			line-height: 2rem;
+			padding: 1.8rem 0.7rem 1.2rem 4.1rem;
+
+		}
+		.middle-content-s p{
+			
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #323232;
+			letter-spacing: -0.03rem;
+			line-height: 2rem;
+			padding: 1.5rem 0.7rem 1.3rem 4.1rem;
+
+		}
+		.middle-content span, .middle-content-s span{
+			color: #ff0000;
+		}
+		.tip-content{
+			position: relative;
+			padding: 1.7rem 1rem 1.1rem 8rem;
+		}
+		.tip-content{
+			border-bottom: 1px solid #F4F4F4;
+		}
+		.tip-content img{
+			position: absolute;
+			left: 1.5rem;	
+		}
+
+		.name{
+			
+			
+			font-family: PingFangSC-Medium;
+			font-size: 1.6rem;
+			color: #323232;
+			letter-spacing: -0.039rem;
+			
+		}
+		.name span{
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #666666;
+			letter-spacing: -0.031rem;
+			padding-left:1rem;
+		}
+		.address{
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #666666;
+			letter-spacing: -0.031rem;
+			padding-top:0.3rem;
+		}
+		.ill{
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #999999;
+			letter-spacing: -0.041rem;
+			padding:0.4rem 0 0.8rem 0;
+			
+		}
+		.info{
+			border-bottom: 1px solid #F4F4F4;
+		}
+		.sell p{
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #666666;
+			letter-spacing: -0.031rem;
+		}
+		.sell{
+			padding:0.8rem 0.7rem 0 0;
+		}
+		.sell span{
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #FF6134;
+			letter-spacing: -0.031rem;
+			padding-right: 0.7rem;
+			
+		}
+		.sell .special{
+			
+			border: 1px solid #FF6134;
+            border-radius: 1.5rem;
+            float: right;
+            text-align: center;
+            width: 5.4rem;
+			height: 1.5rem;
+
+		}
+		.clearfix{
+			padding: 0.8rem 0 0 1.5rem;
+		}
+		.bottom ul li{
+			height:3rem; 
+			border-bottom: 1px solid #F4F4F4;
+			padding-top: 1.3rem;
+		}
+		.bottom a{
+			font-family: PingFangSC-Light;
+			font-size: 1.5rem;
+			color: #000000;
+			line-height: 1.6rem;
+		}
+		.bottom img{
+		    width: 0.7rem;
+    		height: 1.2rem;
+    		float: right;
+    		padding-right: 1.5rem;
+		}
+		.footer-content{
+			position: relative;
+			padding: 2.6rem 1rem 0.6rem 8rem;
+			border-bottom: 1px solid #F4F4F4;
+		}
+		.footer-content img{
+			position: absolute;
+			left:1.5rem;
+
+		}
+		.footer-content p{
+			font-family: PingFangSC-Regular;
+			font-size: 1.5rem;
+			color: #323232;
+			letter-spacing: -0.036rem;
+			line-height: 1.6rem;
+			padding-left: 2rem;
+		}
+		.footer-content .footer-tip{
+			padding: 3.2rem 0 2rem 2rem;
+			font-family: PingFangSC-Light;
+			font-size: 1.3rem;
+			color: #999999;
+			letter-spacing: -0.031rem;
+			line-height: 1.3rem;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="top-title">阑尾炎手术</div>
+		<p>口腔溃疡俗称“口疮”，是一种常见的发生于口腔黏膜的溃疡性损伤病症，多见于唇内侧、舌头、舌腹、颊黏膜、前庭沟、软腭等部位，这些部位的黏膜缺乏角质化层或角化较差舌头溃...</p>
+		<div class="top-bottom">
+			<a href="#">就诊科室</a>
+			<a href="#">术前注意事项</a>
+			<a href="#">术后护理</a>
+		</div>
+	</div>
+	<div class="middle">
+		<div class="middle-title">相关咨询记录
+			<a href="#">更多<img src="./images/path.png" alt=""></a>
+		</div>
+		<div class="middle-content">
+			<img src="./images/ask.png" alt="">
+			<p>医生您好，<span>痤疮</span>或者粉刺、<span>痤疮</span>破裂、肤色不好、变色或者色素沉淀，该怎么办？应该吃点什么合适，平时应该注意什么饮食习惯或者生活上应该怎么样？</p>
+		</div>
+		<div class="middle-content-s">
+			<img src="./images/ask.png" alt="">
+			<p>医生您好，<span>痤疮</span>或者粉刺、<span>痤疮</span>破裂、肤色不好、变色或者色素沉淀，该怎么办？应该吃点什么合适，平时应该注意什么饮食习惯或者生活上应该怎么样？</p>
+		</div>
+
+	</div>
+	<div class="tip">
+		<div class="tip-title">医生推荐
+			<a href="#">更多<img src="./images/path.png" alt=""></a>
+		</div>
+		<div class="tip-content">
+			<img src="./images/doctor.png" alt="">
+			<div class="info">
+				<p class="name">王坚韧<span>皮肤科 副主任医师</span></p>
+				<p class="address">中国人民解放军总医院（301医院）</p>
+				<p class="ill">擅长：眼科常见病，脸裂斑，视网膜静脉阻塞白内障，眼底出血，斜视，视网膜脱落，眼红病等…</p>
+			</div>
+			<div class="sell">
+				<p><span>¥5起</span>8792人购买</p>
+			</div>
+			
+		</div>
+		<div class="tip-content">
+			<img src="./images/doctor.png" alt="">
+			<div class="info">
+				<p class="name">王坚韧<span>皮肤科 副主任医师</span></p>
+				<p class="address">中国人民解放军总医院（301医院）</p>
+				<p class="ill">擅长：眼科常见病，脸裂斑，视网膜静脉阻塞白内障，眼底出血，斜视，视网膜脱落，眼红病等…</p>
+			</div>
+			<div class="sell">
+				<p><span>¥5起</span>8792人购买
+				<span class="special">特色服务</span>
+				</p>
+			</div>
+			
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="bottom-title">健康百科</div>
+		<ul class="clearfix">
+			<li><a href="#">痤疮如何治疗？</a><img src="./images/path.png" alt=""></li>
+			<li><a href="#">痤疮该怎么办？</a><img src="./images/path.png" alt=""></li>
+			<li><a href="#">怎样给痤疮分类</a><img src="./images/path.png" alt=""></li>
+			<li><a href="#">重要怎么一直痤疮</a><img src="./images/path.png" alt=""></li>
+		</ul>
+	</div>
+	<div class="footer">
+		<div class="footer-title">相关科普资讯
+		<a href="#">更多<img src="./images/path.png" alt=""></a></div>
+		<div class="footer-content">
+			<img src="./images/kid.png" alt="">
+			<p>把脸洗干净就不会长痘痘了吗？</p>
+			<p class="footer-tip">两性</p>
+		</div>
+		<div class="footer-content">
+			<img src="./images/no.png" alt="">
+			<p>把脸洗干净就不会长痘痘了吗？</p>
+			<p class="footer-tip">两性</p>
+		</div>
+		<div class="footer-content">
+			<img src="./images/video.png" alt="">
+			<p>医生被泼脏水，只能自认倒霉？</p>
+			<p class="footer-tip">直播</p>
+		</div>	
+		
+	</div>
+	<script>
+		$(function(){
+			$.ajax({
+				url:"https://biztest.chunyu.me/api/v8/home_search/",
+				type:"get",
+				dataType:"json",
+				data:{
+					is_json:1,
+					query:"阑尾炎手术",
+				},
+				success:function(res){
+					console.log(res);
+				},
+				
+			})		
+
+
+
+
+
+
+
+		})
+
+
+	</script>
+</body>
+</html>
