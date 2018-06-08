@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="./js/jquery-3.2.0.min.js"></script>
+	<title>批量通知患者</title>
+	<style>
+		html,body{
+			font-size: 62.5%;
+			background-color: #F2F5F4;
+		}
+		html,body,ul,li,p{
+			margin: 0;
+			padding: 0;
+		}
+
+		.right{
+			
+			margin: 1.2rem  0 0 28.5rem;
+		}
+		.content{
+			padding-top:1.5rem;
+		}
+		.content-top, .content-middle, .content-bottom{
+			width: 37.5rem;
+			height: 10.3rem;
+			background-color: #fff;
+			position: relative;
+			/*background-image: url(./images/babo.png);
+			background-repeat: no-repeat;
+			background-position: 31rem 1.8rem;
+			background-size: 2rem 2rem;*/
+		}
+
+		.info, .info-a, .info-b{
+			float: left;
+			
+		}
+		.info img, .info-a img, .info-b img{
+			margin: 1.5rem 0 0 1.5rem;
+			
+		}
+		.info .name, .info-a .name, .info-b .name{
+			font-family:PingFangSC-Regular;
+			font-size:1.6rem;
+			color:#323232;
+			letter-spacing:-0.04rem;
+			line-height:1.6rem;
+			text-align:justify;
+			position: absolute;
+			top: 1.7rem;
+			left: 6rem;
+		}
+		.info .ill{
+			font-family:PingFangSC-Regular;
+			font-size:1.6rem;
+			color:#666666;
+			letter-spacing:-0.04rem;
+			line-height:1.6rem;
+			text-align:left;
+			position: absolute;
+			top: 1.7rem;
+			left: 10.5rem;
+		}
+		.info-a .ill, .info-b .ill{
+			font-family:PingFangSC-Regular;
+			font-size:1.6rem;
+			color:#666666;
+			letter-spacing:-0.04rem;
+			line-height:1.6rem;
+			text-align:left;
+			position: absolute;
+			top: 1.7rem;
+			left: 14.5rem;
+		}
+		.info p, .info-a p, .info-b p{
+			font-family:PingFangSC-Regular;
+			font-size:1.3rem;
+			color:#666666;
+			letter-spacing:0;
+			text-align:justify;
+			position: absolute;
+			top: 3.5rem;
+			left: 6rem;
+		}
+		.info-last, .info-last-b{
+			background:#f9f9f9;
+			border-radius:0.2rem;
+			width:5.1rem;
+			height:2.0rem;
+			
+    		text-align: center;
+    		position: absolute;
+			top: 5.8rem;
+			left: 5.8rem;
+		}
+		.info-last-a{
+			background:#f9f9f9;
+			border-radius:0.2rem;
+			width:14.1rem;
+			height:2.0rem;
+			
+    		text-align: center;
+    		position: absolute;
+			top: 5.8rem;
+			left: 5.8rem;
+		}
+		.info-first{
+			background:#f9f9f9;
+			border-radius:0.2rem;
+			width:9.1rem;
+			height:2.0rem;
+			
+    		text-align: center;
+    		position: absolute;
+			top: 5.8rem;
+			left: 11.8rem;
+		}
+		.info-first-b{
+			background:#f9f9f9;
+			border-radius:0.2rem;
+			width:16.1rem;
+			height:2.0rem;
+			
+    		text-align: center;
+    		position: absolute;
+			top: 5.8rem;
+			left: 11.8rem;
+		}
+		.info-last span,.info-first span,.info-last-a span, .info-last-b span, .info-first-b span{
+			font-family:PingFangSC-Regular;
+			font-size:1.3rem;
+			color:#bcbcbc;
+			line-height: 2.0rem;
+			
+		}
+	    .select-btn{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 1.5rem;
+			left: 31rem;
+			
+		}
+
+		.no-selected{
+			background-image: url("./images/babo.png");
+			background-size: 100% 100%;
+		}
+		.selected{
+			background-image: url("./images/babo-c.png");
+			background-size: 100% 100%;
+		}
+		.foot{
+			margin-top: 22rem;
+		}
+		.foot-left{
+			width: 26.2rem;
+			height: 4.8rem;
+			background:#1c91e0;
+			text-align: center;
+			line-height: 4.8rem;
+			float: left;
+		}
+		.foot-left span{
+			font-family:PingFangSC-Regular;
+			font-size:1.8rem;
+			color:#ffffff;
+			line-height:1.8rem;
+			
+		}
+		.select-all {
+			
+			
+			height: 4.8rem;
+			line-height: 4.8rem;
+			background: #fff;
+			text-align:center;
+		}
+		.foot-right span{
+			font-family:PingFangSC-Regular;
+			font-size:1.6rem;
+			color:#666666;
+			letter-spacing:0.083rem;
+			line-height:1.4rem;
+			
+			
+		    
+		}
+		.all-btn{
+			height: 2rem;
+			width: 2rem;
+			
+			display: inline-block;
+			
+			margin: 1rem 0 0 1rem;
+		}
+	    .all-noselected {
+            background-image: url("./images/babo.png");
+            background-size: 100% 100%;
+        }
+        .all-selected {
+            background-image: url("./images/babo-c.png");
+            background-size: 100% 100%;
+        }
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="left">
+			
+		</div>
+		<div class="right">
+			<p>关闭管理</p>
+		</div>
+	</div>
+	<div class="content">
+		<div class="content-top">
+			<div class="info">
+				
+				<img src="./images/kid.png" alt="">
+				<span class="name">石小天</span>
+				<span class="ill">感冒</span>
+				<p>男 27岁</p>
+				<div class="info-last">
+					<span>已支付</span>
+				</div>
+				<div class="info-first">
+					<span>黑龙江／哈尔滨</span>
+				</div>
+				<div class="hhh">
+					<div class="select-btn no-selected"></div>
+				</div>
+			</div>
+		</div>
+		<div class="content-middle">
+			<div class="info-a">
+				
+				<img src="./images/kid.png" alt="">
+				<span class="name">买哈卖的内...</span>
+				<span class="ill">腮腺炎发言</span>
+				<p>男 40岁</p>
+				<div class="info-last-a">
+					<span>新疆／比其肯布尔古斯台</span>
+				</div>
+				<div class="hhh">
+					<div class="select-btn no-selected"></div>
+				</div>
+			</div>
+		</div>
+		<div class="content-bottom">
+			<div class="info-b">
+				
+				<img src="./images/kid.png" alt="">
+				<span class="name">灿烂的微笑</span>
+				<span class="ill">三体综合炎...</span>
+				<p>女 20岁</p>
+				<div class="info-last-b">
+					<span>已支付</span>
+				</div>
+				<div class="info-first-b">
+					<span>甘肃／那然色布斯台音布拉格</span>
+				</div>
+				<div class="hhh">
+					<div class="select-btn no-selected"></div>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="foot-left">
+				<span>下一步</span>
+			</div>
+			<div class="foot-right">
+				<span class="select-all">全选</span>
+				<span class="all-btn all-noselected"></span>
+
+			</div>
+			
+		</div>
+	
+	</div>
+	<script>
+        $(function(){
+            //选中全部
+            console.log($(".select-all"));
+            $(".select-all").click(function(){
+
+                if($(".all-btn").hasClass("all-noselected")){
+                    $(".all-btn").addClass("all-selected").removeClass("all-noselected");
+                    $(".select-btn").addClass("selected");
+                }else {
+                    $(".all-btn").addClass("all-noselected").removeClass("all-selected");
+                    $(".select-btn").addClass("no-selected").removeClass("selected");
+                }
+
+            });
+
+            //单个选中
+            console.log($(".hhh"));
+            $(".hhh").click(function(){
+            	console.log($(this).children(".select-btn"));
+                $(this).children(".select-btn").toggleClass("selected");
+                
+                var selectedNum = $(".selected").length;
+                var selectedBtnNum = $(".select-btn").length;
+
+                if(selectedNum == selectedBtnNum) {
+                    $(".all-btn").addClass("all-selected").removeClass("all-noselected");
+                }else {
+                    $(".all-btn").addClass("all-noselected").removeClass("all-selected");
+                }
+            })
+        })
+    </script>
+</body>
+</html>
