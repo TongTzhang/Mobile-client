@@ -1,0 +1,863 @@
+@import "../common/fonts";
+
+html, body, span, div, img, p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    // background-color: #1f0035;
+    background: url('/public/build/img/activity/annual/bg-2.png') no-repeat;
+    background: url('/public/build/img/activity/annual/bg.png') no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    // height: 100%;
+}
+#router{
+    position: relative;
+    .game-map{
+        width: 1010px;
+        height: 657px;
+        margin: 335px auto auto;
+        position: relative;
+        .step-run{
+            position: absolute;
+            width:160px;
+            height:120px;
+            border-radius:12px;
+            margin-right:10px;
+            margin-bottom:10px;
+            span{
+                font-size:40px;
+                font-family:ZX-Medium;
+                font-weight:500;
+                color:rgba(255,255,255,1);
+                text-align: center;
+                display: block;
+                opacity: 0.3;
+            }
+            .weight{
+                font-weight: 900;
+            }
+        }
+        .count{
+            &::before{
+                content:'积分';
+                display: block;
+                color:rgba(255,255,255,1);
+                margin-top:24px;
+                margin-left:22px;
+                font-family: PingFangSC-Medium;
+                font-weight:500;
+                opacity: 0.3;
+            }
+        }
+        .money{
+            &::before{
+                content:'狐币';
+                display: block;
+                color:rgba(255,255,255,1);
+                margin-top:24px;
+                margin-left:22px;
+                font-family: PingFangSC-Medium;
+                font-weight:500;
+                opacity: 0.3;
+            }
+        }
+        .center{
+            position: absolute;
+            top: 230px;
+            left: 437px;
+            z-index: 2;
+            opacity: 0.8;
+            .center-img{
+                width: 136px;
+
+            }
+        }
+        .game-tip{
+            font-size:20px;
+                font-family:PingFangSC-Semibold;
+                font-weight:600;
+                color:rgba(255,255,255,1);
+            text-align: center;
+            display: none;
+        }
+        .all-money{
+            font-size:80px;
+            font-weight:500;
+            color:rgba(255,240,90,1);
+            font-family:ZX-Medium;
+            padding-top:385px;
+            text-align: center;
+        }
+        .red-light{
+            position: absolute;
+            top: 115px;
+            left: 311px;
+            img{
+                width:390px;
+                height:391px;
+            }
+        }
+        @-webkit-keyframes rotation{
+            from {-webkit-transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);}
+            }
+            .Rotation{
+            -webkit-transform: rotate(360deg);
+            animation: rotation 3s linear infinite;
+            -moz-animation: rotation 3s linear infinite;
+            -webkit-animation: rotation 3s linear infinite;
+            -o-animation: rotation 3s linear infinite;
+            }
+        .step-0{
+            background:rgba(123,38,255,0.15);
+            top:17px;
+            left: 0;
+            line-height: 120px;
+        }
+        .step-1{
+            background:rgba(255,0,240,0.15);
+            top:17px;
+            left:170px;
+        }
+        .step-2{
+            background:rgba(172, 87, 255, 0.15);
+            top:17px;
+            left:340px;
+        }
+        .step-3{
+            background:rgba(255,202,0,0.15);
+            top:17px;
+            left:510px;
+        }
+        .step-4{
+            background:rgba(255,0,240,0.15);
+            top:17px;
+            left:680px;
+        }
+        .step-5{
+            background:rgba(255,255,255,0.15);
+            top:17px;
+            left:850px;
+            // line-height: 120px;
+        }
+        .step-6{
+            top:147px;
+            left:850px;
+            background:rgba(0,105,255,0.15);
+        }
+        .step-7{
+            background:rgba(255,0,240,0.15);
+            top:277px;
+            left:850px;
+        }
+        .step-8{
+            background:rgba(255,202,0,0.15);
+            top:407px;
+            left:850px;
+        }
+        .step-9{
+            top:537px;
+            left:850px;
+            background:rgba(255,255,255,0.15);
+            line-height: 120px;
+        }
+        .step-10{
+            top:537px;
+            left:680px;
+            background:rgba(255,0,240,0.15);
+        }
+        .step-11{
+            top:537px;
+            left:510px;
+            background:rgba(255,0,240,0.15);
+        }
+        .step-12{
+            top:537px;
+            left:340px;
+            background:rgba(95,0,255,0.3);
+        }
+        .step-13{
+            top:537px;
+            left:170px;
+            background:rgba(255,202,0,0.15);
+        }
+        .step-14{
+            top:537px;
+            left:0;
+            background:rgba(255,255,255,0.15);
+            line-height: 120px;
+        }
+        .step-15{
+            top:407px;
+            left:0;
+            background:rgba(255,0,240,0.15);
+        }
+        .step-16{
+            top:277px;
+            left:0;
+            background:rgba(255,0,240,0.15);
+        }
+        .step-17{
+            top:147px;
+            left:0;
+            background:rgba(255,202,0,0.15);
+        }
+        .red-person{
+            width: 55px;
+            height: 68px;
+            position: absolute;
+            top: 0;
+            left: 48px;
+        }
+        .blue-person{
+            width: 55px;
+            height: 68px;
+            position: absolute;
+            top: 57px;
+            left: 48px;
+        }
+        .red-step{
+            position: absolute;
+            top: 662px;
+            .step-num{
+                width: 32px;
+                height: 41px;
+                margin-right: 13px;
+                display: inline-block;
+                background-color:rgba(246,36,121,0.1);
+                border-radius:8px;
+                text-align: center;
+                span{
+                    line-height: 41px;
+                    font-size:12px;
+                    font-family:PingFangSC-Semibold;
+                    font-weight:600;
+                    color:rgba(246, 36, 121, 0.8);
+                }
+            }
+            .step-num:hover{
+                background-color:rgba(246,36,121,1);
+                span{
+                    color:rgba(255, 255, 255, 1);
+                }
+            }
+        }
+        .blue-step{
+            position: absolute;
+            top: 662px;
+            right: 0;
+            .step-num{
+                width: 32px;
+                height: 41px;
+                margin-left: 13px;
+                display: inline-block;
+                background-color:rgba(36, 124, 246,0.1);
+                border-radius:8px;
+                text-align: center;
+                span{
+                    line-height: 41px;
+                    font-size:12px;
+                    font-family:PingFangSC-Semibold;
+                    font-weight:600;
+                    color:rgba(36, 124, 246, 0.8)   
+                }
+            }
+            .step-num:hover{
+                background-color:rgba(36, 124, 246,1);
+                span{
+                    color:rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+    .integral-1{
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        .money{
+            span{
+                display: block;
+            }
+            .money-count-1{
+                font-size:40px;
+                font-family:ZX-Medium;
+                font-weight:500;
+                color:rgba(255,152,194,1);
+            }
+            .money-tip{
+                font-size:20px;
+                font-family:PingFangSC-Semibold;
+                font-weight:600;
+                color:rgba(255,152,194,1);
+                margin-top:5px;
+            }
+            .red-integral{
+                width:80px;
+                height:360px;
+                background:RGBA(117, 38, 90, 1);
+                margin-top: 56px;
+                position: relative;
+                font-family: ZX-Medium;
+                .block-0{
+                    position: absolute;
+                    width:80px;
+                    height:18px;
+                    bottom:0;
+                     background-color: #ac0f72;
+                }
+                .block-1{
+                    position: absolute;
+                    bottom:78px;
+                    left:28px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .tip-1{
+                    position: absolute;
+                    bottom:90px;
+                    right:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-2{
+                    position: absolute;
+                    bottom:81px;
+                    right:-25px;
+                }
+                .block-2{
+                    position: absolute;
+                    bottom:168px;
+                    left:22px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .block-3{
+                    position: absolute;
+                    bottom:258px;
+                    left:22px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .block-4{
+                    position: absolute;
+                    bottom:348px;
+                    left:22px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .tip-3{
+                    position: absolute;
+                    bottom:180px;
+                    right:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-4{
+                    position: absolute;
+                    bottom:171px;
+                    right:-25px;
+                }
+                .tip-5{
+                    position: absolute;
+                    bottom:270px;
+                    right:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-6{
+                    position: absolute;
+                    bottom:261px;
+                    right:-25px;
+                }
+                .tip-7{
+                    position: absolute;
+                    bottom:360px;
+                    right:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-8{
+                    position: absolute;
+                    bottom:351px;
+                    right:-25px;
+                }
+                .tip-9, .tip-10, .tip-11, .tip-12{
+                    font-size:30px;
+                    font-family: ZX-Medium;
+                    font-weight:500;
+                    color:rgba(255,240,90,1);
+                    position: absolute;
+                    display: none;
+                }
+                .tip-9{
+                    bottom: 74px;
+                    right: -127px;
+                }
+                .tip-10{
+                    bottom: 164px;
+                    right: -143px;
+                }
+                .tip-11{
+                    bottom: 254px;
+                    right: -143px;
+                }
+                .tip-12{
+                    bottom: 344px;
+                    right: -143px;
+                }
+            }
+        }
+        .integral{
+            span{
+                display: block;
+            }
+            .integral-count{
+                font-size:45px;
+                font-family: ZX-Medium;
+                font-weight:600;
+                color:rgba(255,152,194,1);
+                margin-top:8px;
+            }
+            .integral-tip{
+                font-size:16px;
+                font-family:DIV;
+                font-weight:500;
+                color:rgba(255,152,194,1);
+            }
+        }
+    }
+    .integral-2{
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        text-align: right;
+        .money{
+            span{
+                display: block;
+            }
+            .money-count-1{
+                font-size:40px;
+                font-family:ZX-Medium;
+                font-weight:500;
+                color:rgba(138, 224, 255, 1);
+            }
+            .money-tip{
+                font-size:20px;
+                font-family:PingFangSC-Semibold;
+                font-weight:600;
+                color:rgba(138, 224, 255, 1);
+                margin-top:5px;
+                margin-left: 44px;
+            }
+            .blue-integral{
+                width:80px;
+                height:360px;
+                background:RGBA(51, 61, 124, 1);
+                margin-top: 56px;
+                margin-left: 126px;
+                position: relative;
+                float: right;
+                font-family: ZX-Medium;
+                margin-bottom:8px;
+                .block-0{
+                    position: absolute;
+                    width:80px;
+                    height:18px;
+                    bottom:0;
+                     background-color: #3c58ff;
+                }
+                .block-1{
+                    position: absolute;
+                    bottom:78px;
+                    left:28px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .tip-1{
+                    position: absolute;
+                    bottom:90px;
+                    left:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-2{
+                    position: absolute;
+                    bottom:81px;
+                    left:-25px;
+                }
+                .block-2{
+                    position: absolute;
+                    bottom:168px;
+                    left:22px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .block-3{
+                    position: absolute;
+                    bottom:258px;
+                    left:22px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .block-4{
+                    position: absolute;
+                    bottom:348px;
+                    left:22px;
+                    font-size:20px;
+                    color:rgba(255,255,255,1);
+                }
+                .tip-3{
+                    position: absolute;
+                    bottom:180px;
+                    left:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-4{
+                    position: absolute;
+                    bottom:171px;
+                    left:-25px;
+                }
+                .tip-5{
+                    position: absolute;
+                    bottom:270px;
+                    left:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-6{
+                    position: absolute;
+                    bottom:261px;
+                    left:-25px;
+                }
+                .tip-7{
+                    position: absolute;
+                    bottom:360px;
+                    left:0;
+                    width:20px;
+                    height:1px;
+                    border:0.3px solid rgba(255,255,255,0.4014);
+                    background-color: rgba(255,255,255,0.4014);
+                }
+                .tip-8{
+                    position: absolute;
+                    bottom:351px;
+                    left:-25px;
+                }
+                .tip-9, .tip-10, .tip-11, .tip-12{
+                    font-size:30px;
+                    font-family: ZX-Medium;
+                    font-weight:500;
+                    color:rgba(255,240,90,1);
+                    position: absolute;
+                    display: none;
+                }
+                .tip-9{
+                    bottom: 74px;
+                    left: -127px;
+                }
+                .tip-10{
+                    bottom: 164px;
+                    left: -143px;
+                }
+                .tip-11{
+                    bottom: 254px;
+                    left: -143px;
+                }
+                .tip-12{
+                    bottom: 344px;
+                    left: -143px;
+                }
+            }
+        }
+        .integral{
+            span{
+                display: block;
+            }
+            .integral-count{
+                font-size:45px;
+                font-family: ZX-Medium;
+                font-weight:600;
+                color:rgba(138, 224, 255, 1);
+                margin-top:8px;
+                margin-left:133px;
+            }
+            .integral-tip{
+                font-size:16px;
+                font-family:DIV;
+                font-weight:500;
+                color:rgba(138, 224, 255, 1);
+                margin-left:137px;
+            }
+        }
+    }
+    .next{
+        width:80px;
+        height:40px;
+        background:rgba(255,255,255,0.192);
+        border-radius:20px;
+        margin: 30px 0 0 44px;
+        font-size:20px;
+        font-weight:600;
+        color:rgba(255,255,255,1);
+        display: none;
+        text-align: center;
+        span{
+            line-height: 40px;
+        }
+    }
+    .end{
+        width:80px;
+        height:40px;
+        background:rgba(255,255,255,0.192);
+        border-radius:20px;
+        margin: 30px 0 0 44px;
+        font-size:20px;
+        font-weight:600;
+        color:rgba(255,255,255,1);
+        text-align: center;
+        span{
+            line-height: 40px;
+        }
+    }
+    .border-red{
+        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 1),0px 2px 4px 0px RGBA(255, 255, 255, 1)
+    }
+    .protect-red{
+        opacity: 0;
+        width: 250px;
+        float:right;
+        margin-top: 60px;
+    }
+    .protect-blue{
+        opacity: 0;
+        width: 250px;
+        float:right;
+        margin-top: 60px;
+    }
+    .last{
+        opacity: 1;
+    }
+}
+.special-reward{
+    display: none;
+    color:rgba(255,255,255,1);
+    font-family: PingFangSC-Semibold;
+    .content-1{
+        font-size:80px;
+        font-family:PingFangSC-Semibold;
+        font-weight:600;
+        margin: 418px 0 0 279px;
+    }
+    .content-2{
+        font-size:37px;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        margin-left: 279px;
+        margin-top: 10px;
+    }
+    .content-3{
+        font-size:40px;
+        font-family:PingFangSC-Semibold;
+        font-weight:600;
+        margin-top: 73px;
+        margin-left: 279px;
+        p{
+            padding-top: 30px;
+        }
+    }
+    .success{
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1972);
+        border-radius: 20px;
+        text-align: center;
+        line-height: 40px;
+        margin:103px 0 0 44px;
+        span{
+            display: inline-block;
+            width:40px;
+            height:28px;
+            font-size:20px;
+            font-family:PingFangSC-Semibold;
+            font-weight:600;
+            color:rgba(255,255,255,1);
+            line-height:28px;
+        }
+    }
+    .failure{
+        text-align: center;
+        display: inline-block;
+        line-height: 40px;
+        width: 80px;
+        height: 40px;
+        background: rgba(255, 224, 60, 0.1972);
+        border-radius: 20px;
+        margin-left:23px;
+        span{
+            display: inline-block;
+            width:40px;
+            height:28px;
+            font-size:20px;
+            font-family:PingFangSC-Semibold;
+            font-weight:600;
+            color:rgba(255, 224, 60, 1);
+            line-height:28px;
+        }
+    }
+}
+.the-end{
+    display: none;
+    text-align: center;
+    position: relative;
+    width: 1000px;
+    margin: 221px auto;
+    .coin{
+        text-align: center;
+        margin: 0 auto;
+        height: 285px;
+        .coin-light{
+            width: 390px;
+            height: 390px;
+        }
+        .coin-gold{
+            position: absolute;
+            top: 126px;
+            left: 43.5%;
+            width: 136px;
+            height: 143px;
+        }
+    }
+    .money{
+        height:102px;
+        font-size:70px;
+        font-family:ZX-Medium;
+        font-weight:500;
+        color:rgba(255,240,90,1);
+        line-height:103px;
+        text-align: center;
+    }
+    .progress-bar{
+        margin: 55px auto auto;
+        text-align: center;
+        width: 1000px;
+        height: 50px;
+        position: relative;
+        border-radius:25px;
+        .red-bar{
+            position: absolute;
+            width: 500px;
+            left:0;
+            background-color:rgba(255, 51, 130, 1);
+            height: 50px;
+            border-radius: 25px 0px 0px 25px;
+            color: rgba(255, 255, 255, 1);
+            span{
+                display: inline-block;
+                font-size: 30px;
+                line-height: 50px;
+            }
+        }
+        .blue-bar{
+            position: absolute;
+            width: 500px;
+            right:0;
+            background-color:rgba(51, 136, 255, 1);
+            height: 50px;
+            border-radius: 0px 25px 25px 0px;
+            color: rgba(255, 255, 255, 1);
+            span{
+                display: inline-block;
+                font-size: 30px;
+                line-height: 50px;
+            }
+        }
+    }
+    .red-result{
+        display: inline-block;
+        margin: 96px auto auto;
+        .result-money{
+            height:42px;
+            font-size:30px;
+            font-family:PingFangSC-Semibold;
+            font-weight:600;
+            color:rgba(255,51,130,1);
+            line-height:42px;
+            position: absolute;
+            left: 0;
+            display: none;
+        }
+        .coin-money{
+            height: 76px;
+            font-size: 50px;
+            font-family: ZX-Medium;
+            font-weight: 500;
+            color: rgba(255,152,194,1);
+            line-height: 77px;
+            position: absolute;
+            left: 55px;
+            margin-top: 43px;
+            display: none;
+        }
+        .money-img{
+            position: absolute;
+            left:0;
+            width: 44px;
+            height: 48px;
+            margin-top:58px;
+            display: none;
+        }
+    }
+    .blue-result{
+        display: inline-block;
+        margin: 96px auto auto;
+        .result-money{
+            height:42px;
+            font-size:30px;
+            font-family:PingFangSC-Semibold;
+            font-weight:600;
+            color:rgba(51, 136, 255, 1);
+            line-height:42px;
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+        .coin-money{
+            height: 76px;
+            font-size: 50px;
+            font-family: ZX-Medium;
+            font-weight: 500;
+            color: rgba(36, 178, 255, 1);
+            line-height: 77px;
+            position: absolute;
+            right: 0;
+            margin-top: 43px;
+            display: none;
+        }
+        .money-img{
+            position: absolute;
+            right:226px;
+            width: 44px;
+            height: 48px;
+            margin-top:58px;
+            display: none;
+        }
+    }
+}
